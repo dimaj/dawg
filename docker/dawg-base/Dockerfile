@@ -3,7 +3,6 @@ MAINTAINER trent_schmidt@cable.comcast.com
 
 EXPOSE 8080
 
-RUN mkdir /dawg-common
 WORKDIR /dawg-common
 
 ADD resources resources
@@ -12,7 +11,7 @@ RUN rpm -Uvh resources/*.rpm rpms/*.rpm
 
 RUN sed -i "s/mirrorlist=https/mirrorlist=http/" /etc/yum.repos.d/epel.repo && \
     yum -y update && \
-    yum -y install tomcat tomcat-* java-1.7.0-openjdk
+    yum -y install tomcat-* java-1.7.0-openjdk
 
 RUN cp resources/tomcat-users.xml /usr/share/tomcat/conf/tomcat-users.xml
 
