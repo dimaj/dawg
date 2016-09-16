@@ -14,7 +14,7 @@ build: copy-dependencies
 
 run:
 	@echo "Running $(_NAME_VERSION)"
-	$(QUIET)docker run -d --name=$(NAME) --link=dawg-db:dawg-db $(_NAME_VERSION)
+	$(QUIET)docker run -d -p 8080:8080 --name=$(NAME) --link=dawg-db:dawg-db $(_NAME_VERSION)
 
 # $1 - directory/artifact name...eg: dawg-house
 rpm-location-builder =  $(addsuffix *.rpm,../../libraries/$(1)/target/rpm/$(1)/RPMS/noarch/)
@@ -24,6 +24,7 @@ copy-dependencies:
 	$(QUIET)cp $(call rpm-location-builder,dawg-house) target/rpms
 	$(QUIET)cp $(call rpm-location-builder,dawg-show) target/rpms
 	$(QUIET)cp $(call rpm-location-builder,dawg-pound) target/rpms
+	$(QUIET)cp ../../libraries/dawg-config/target/classes/dawg.ini target/
 
 clean:
 	$(QUIET)rm -rf target

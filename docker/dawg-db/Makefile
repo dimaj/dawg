@@ -14,7 +14,7 @@ build:
 
 run:
 	@echo "Running $(_NAME_VERSION)"
-	$(QUIET)docker run -d --name=$(NAME) $(_NAME_VERSION)
+	$(QUIET)docker run -d -p 27017:27017 --name=$(NAME) $(_NAME_VERSION)
 
 stop:
 	$(QUIET)docker stop $(NAME)
