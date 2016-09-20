@@ -220,6 +220,9 @@ public class HouseRestController {
                     /** Do not override id and mac address */
                     newProps.put(MetaStb.ID, match.get(MetaStb.ID));
                     newProps.put(MetaStb.MACADDRESS, match.get(MetaStb.MACADDRESS));
+                    if (!newProps.containsKey(MetaStb.CATSSERVERHOST)) {
+                        newProps.put(MetaStb.CATSSERVERHOST, match.get(MetaStb.CATSSERVERHOST));
+                    }
                     PersistableDevice pd = new PersistableDevice(newProps);
                     if (replace) {
                         service.replace(pd);
