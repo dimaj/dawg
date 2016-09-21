@@ -50,6 +50,7 @@ String fullVideoUrl = videoUrl + "/axis-cgi/mjpg/video.cgi"
 + (videoCamera != null ? "?camera=" + videoCamera : "");
 String fullAudioUrlMP3Extension = audioUrl + "/play1.mp3";
 String fullAudioUrlOGGExtension = audioUrl + "/play1.ogg";
+Boolean isXR11 = "XR11".equalsIgnoreCase(remoteName);
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -71,7 +72,10 @@ String fullAudioUrlOGGExtension = audioUrl + "/play1.ogg";
         <!-- prompt divs -->
         <div id="faded" class="promptFade"></div>
         <div id="powerPrompt" class="powerPrompt">
-            <jsp:include page="/views/powerPrompt.jsp" />
+            <jsp:include page="/views/powerPrompt.jsp">
+                <jsp:param name="isXR11" value="<%=isXR11 %>" />
+                <jsp:param name="remoteType" value="<%=remoteName %>" />
+            </jsp:include>
         </div>
         <div id="loadComparisonPrompt" class="loadComparisonPrompt">
             <jsp:include page="/views/loadComparisonPrompt.jsp" />
@@ -110,7 +114,7 @@ String fullAudioUrlOGGExtension = audioUrl + "/play1.ogg";
                             	<source src="<%=fullAudioUrlOGGExtension%>" type="audio/ogg">
   								<source src="<%=fullAudioUrlMP3Extension%>" type="audio/mpeg">
                             </audio>
-                            
+
                             <% if (!videoAvail)  {%>
                                 <canvas id="videoNotAvailableOverlay" class="videoNotAvailableOverlay" style="height: 100%; width: 100%; position: initial;"></canvas>
                             <% } %>
@@ -130,7 +134,7 @@ String fullAudioUrlOGGExtension = audioUrl + "/play1.ogg";
                     <canvas id="stdRemoteNotAvailableOverlay" class="stdRemoteNotAvailableOverlay"></canvas>
                 <% } %>
             </div>
-            
+
             <div id="hold_panel" class="hold_panel"></div>
         </div>
 
@@ -144,7 +148,7 @@ String fullAudioUrlOGGExtension = audioUrl + "/play1.ogg";
                 <% } %>
                 <% if (!irAvail) { %>
             LayoutDelegator.addOverlay(new TextOverlay(document.getElementById('stdRemoteNotAvailableOverlay'), 'IR Unavailable'));
- 
+
             <% } %>
 
 
@@ -160,7 +164,7 @@ String fullAudioUrlOGGExtension = audioUrl + "/play1.ogg";
             StandardRemote.bind('<%= remoteName %>');
             FrameRateOperator.bind($('.fpsButton'), $('.fpsDiv'), $('.fpsSelector'));
             HoverManager.bind([$('.directTunePanel'), $('.fpsPanel')]);
-            
+
             var audio = document.getElementById('audio');
             document.getElementById('mute').addEventListener('click', function (e)
             {
@@ -168,7 +172,7 @@ String fullAudioUrlOGGExtension = audioUrl + "/play1.ogg";
             	audio.muted = !audio.muted;
             	e.preventDefault();
             },false);
-            
+
         </script>
     </body>
 </html>
