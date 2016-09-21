@@ -114,7 +114,9 @@ public class HouseRestController {
 
     public static final String[] ignoreProps = new String[] { "--class",
         PersistableDevice.RESERVER, PersistableDevice.EXPIRATION_KEY,
-        MetaStb.CATSSERVERHOST,MetaStb.MACADDRESS, MetaStb.ID, MetaStb.MODIFIED_PROPS};
+        MetaStb.CATSSERVERHOST,MetaStb.MACADDRESS, MetaStb.ID, MetaStb.MODIFIED_PROPS,
+        MetaStb.CATSKEYSETMAPPING
+    };
 
     /**
      * Gets properties for the given stb that can be edited. Will also sort the properties.
@@ -223,6 +225,9 @@ public class HouseRestController {
                     if (!newProps.containsKey(MetaStb.CATSSERVERHOST)) {
                         newProps.put(MetaStb.CATSSERVERHOST, match.get(MetaStb.CATSSERVERHOST));
                     }
+                    if (!newProps.containsKey(MetaStb.CATSKEYSETMAPPING)) {
+                        newProps.put(MetaStb.CATSKEYSETMAPPING, match.get(MetaStb.CATSKEYSETMAPPING));
+                    }
                     PersistableDevice pd = new PersistableDevice(newProps);
                     if (replace) {
                         service.replace(pd);
@@ -259,8 +264,8 @@ public class HouseRestController {
      * The server will attempt to retrieve existing devices by deviceId and apply the provided
      * key value pairs into those devices.  If no device exists for the device, nothing will happen.
      *
-     * @param id An array of DAWG deviceIds to update
-     * @param data A Map of key value pairs.
+     * @param payload An array of DAWG deviceIds to update
+     * @param op A Map of key value pairs.
      * @return
      */
     @SuppressWarnings({"unchecked", "rawtypes" })

@@ -71,12 +71,16 @@ Boolean isXR11 = "XR11".equalsIgnoreCase(remoteName);
 
         <!-- prompt divs -->
         <div id="faded" class="promptFade"></div>
+
         <div id="powerPrompt" class="powerPrompt">
-            <jsp:include page="/views/powerPrompt.jsp">
-                <jsp:param name="isXR11" value="<%=isXR11 %>" />
-                <jsp:param name="remoteType" value="<%=remoteName %>" />
-            </jsp:include>
+            <c:set var="isXR11" value="<%= isXR11 %>" scope="request" />
+            <jsp:include page="/views/powerPrompt.jsp" />
         </div>
+
+        <div id="mutePrompt" class="mutePrompt">
+            <jsp:include page="/views/mutePrompt.jsp" />
+        </div>
+
         <div id="loadComparisonPrompt" class="loadComparisonPrompt">
             <jsp:include page="/views/loadComparisonPrompt.jsp" />
         </div>
@@ -129,7 +133,9 @@ Boolean isXR11 = "XR11".equalsIgnoreCase(remoteName);
                 <div id="remote" class="remoteContainer" style="width=90%;">
                     <jsp:include page="<%=stdRemotePage %>" />
                 </div>
+                <% if (!isXR11) { %>
                 <img id="mute" src='<c:url value="/images/remotes/xr2/keys/mute.png" />' alt="" style="width:10%;right:0%; top:0%; position:absolute"/>
+                <% } %>
                 <% if (!irAvail)  {%>
                     <canvas id="stdRemoteNotAvailableOverlay" class="stdRemoteNotAvailableOverlay"></canvas>
                 <% } %>

@@ -50,6 +50,7 @@ The main page for viewing the stb metadata, trace, remote, and video.
 <script type="text/javascript" src='<c:url value="/js/directTune.js" />'></script>
 <script type="text/javascript" src='<c:url value="/js/validateInput.js" />'></script>
 <script type="text/javascript" src='<c:url value="/js/power.js" />'></script>
+<script type="text/javascript" src='<c:url value="/js/mute.js" />'></script>
 <script type="text/javascript" src='<c:url value="/js/jsmpg.js" />'></script>
 <script type="text/javascript" src='<c:url value="/js/FrameRateOperator.js" />'></script>
 <script type="text/javascript" src='<c:url value="/js/HoverManager.js" />'></script>

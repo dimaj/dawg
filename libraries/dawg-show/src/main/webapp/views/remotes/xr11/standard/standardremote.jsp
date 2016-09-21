@@ -48,14 +48,14 @@ The mini remote image
     <img id="sc"  src='<c:url value="/images/remotes/xr11/keys/C.png" />' onmousedown="clickRemoteButton(event,'C',  true)" onmouseup="clickRemoteButton(event,'C',  false)" alt="" style="width:09.5%;left:55.2%;top:65.8%;position:absolute"/>
     <img id="sd"  src='<c:url value="/images/remotes/xr11/keys/D.png" />' onmousedown="clickRemoteButton(event,'D',  true)" onmouseup="clickRemoteButton(event,'D',  false)" alt="" style="width:12.5%;left:71.7%;top:65.3%;position:absolute"/>
 
-    <img id="sallpower"  src='<c:url value="/images/remotes/xr11/keys/AllPower.png" />' onmousedown="clickRemoteButton(event,'POWER',  true)" onmouseup="clickRemoteButton(event,'POWER',  false)" alt="" style="width:14.7%;left:68.3%;top:6.2%;position:absolute"/>
+    <img id="sallpower"  src='<c:url value="/images/remotes/xr11/keys/AllPower.png" />' onclick="clickPower(this)" alt="" style="width:14.7%;left:68.3%;top:6.2%;position:absolute"/>
 
     <img id="sguide"  src='<c:url value="/images/remotes/xr11/keys/Guide.png" />' onmousedown="clickRemoteButton(event,'GUIDE', true)" onmouseup="clickRemoteButton(event,'GUIDE', false)" alt="" style="width:20.2%;left:15.3%;top:35.6%;position:absolute"/>
     <img id="spgup"   src='<c:url value="/images/remotes/xr11/keys/Page up.png" />' onmousedown="clickRemoteButton(event,'PGUP', true)" onmouseup="clickRemoteButton(event,'PGUP', false)" alt="" style="width:20.2%;left:64.5%;top:35.6%;position:absolute"/>
     <img id="sup"     src='<c:url value="/images/remotes/xr11/keys/Up arrow.png" />' onmousedown="clickRemoteButton(event,'UP', true)" onmouseup="clickRemoteButton(event,'UP', false)" alt="" style="width:58.8%;left:20.6%;top:40.9%;position:absolute"/>
     <img id="sleft"   src='<c:url value="/images/remotes/xr11/keys/Left Arrow.png" />' onmousedown="clickRemoteButton(event,'LEFT', true)" onmouseup="clickRemoteButton(event,'LEFT', false)" alt="" style="width:20.8%;left:18.3%;top:41.5%;position:absolute"/>
     <img id="sright"  src='<c:url value="/images/remotes/xr11/keys/Right Arrow.png" />' onmousedown="clickRemoteButton(event,'RIGHT', true)" onmouseup="clickRemoteButton(event,'RIGHT', false)" alt="" style="width:20.8%;left:60.0%;top:41.5%;position:absolute"/>
-    <img id="sdown"   src='<c:url value="/images/remotes/xr11/keys/Down arrow.png" />' onmousedown="clickRemoteButton(event,'DOWN', true)" onmouseup="clickRemoteButton(event,'DOWN', false)" alt="" style="width:58.8%;left:20.6%;top:53.1%;position:absolute"/>
+    <img id="sdown"   src='<c:url value="/images/remotes/xr11/keys/Down arrow.png" />' onmousedown="clickRemoteButton(event,'DOWN', true)" onmouseup="clickRemoteButton(event,'DOWN', false)" alt="" style="width:58.8%;left:20.6%;top:53.3%;position:absolute"/>
 
     <img id="slast"   src='<c:url value="/images/remotes/xr11/keys/Last.png" />' onmousedown="clickRemoteButton(event,'LAST', true)" onmouseup="clickRemoteButton(event,'LAST', false)"alt="" style="width:20.2%;left:15.3%;top:59.8%;position:absolute"/>
     <img id="spgdn"   src='<c:url value="/images/remotes/xr11/keys/Page Down.png" />' onmousedown="clickRemoteButton(event,'PGDN', true)" onmouseup="clickRemoteButton(event,'PGDN', false)" alt="" style="width:20.2%;left:64.5%;top:59.8%;position:absolute"/>
@@ -74,9 +74,9 @@ The mini remote image
 
     <img id="svolup" src='<c:url value="/images/remotes/xr11/keys/Volume up.png" />'   onmousedown="clickRemoteButton(event,'VOLUP', true)" onmouseup="clickRemoteButton(event,'VOLUP', false)" alt="" style="width:20.4%;left:14.4%;top:12.4%;position:absolute"/>
     <img id="schup" src='<c:url value="/images/remotes/xr11/keys/Channel up.png" />'   onmousedown="clickRemoteButton(event,'CHUP', true)"  onmouseup="clickRemoteButton(event,'CHUP', false)"  alt="" style="width:20.4%;left:65.2%;top:12.4%;position:absolute"/>
-    <img id="svoldn" src='<c:url value="/images/remotes/xr11/keys/Volume down.png" />' onmousedown="clickRemoteButton(event,'VOLDN', true)" onmouseup="clickRemoteButton(event,'VOLDN', false)" alt="" style="width:20.4%;left:14.4%;top:19.9%;position:absolute"/>
+    <img id="svoldn" src='<c:url value="/images/remotes/xr11/keys/Volume down.png" />' onmousedown="clickRemoteButton(event,'VOLDN', true)" onmouseup="clickRemoteButton(event,'VOLDN', false)" alt="" style="width:20.8%;left:14.4%;top:19.9%;position:absolute"/>
     <img id="schdn" src='<c:url value="/images/remotes/xr11/keys/Channel down.png" />' onmousedown="clickRemoteButton(event,'CHDN', true)"  onmouseup="clickRemoteButton(event,'CHDN', false)"  alt="" style="width:20.4%;left:65.2%;top:19.9%;position:absolute"/>
-    <img id="smute" src='<c:url value="/images/remotes/xr11/keys/Mute.png" />' onmousedown="clickRemoteButton(event,'MUTE', true)" onmouseup="clickRemoteButton(event,'MUTE', false)"  alt="" style="width:14.6%;left:42.7%;top:12.2%;position:absolute"/>
+    <img id="smute" src='<c:url value="/images/remotes/xr11/keys/Mute.png" />' onclick="clickMute(this)" alt="" style="width:14.6%;left:42.7%;top:12.2%;position:absolute"/>
     <img id="sreplay" src='<c:url value="/images/remotes/xr11/keys/Replay.png" />' onmousedown="clickRemoteButton(event,'REPLAY', true)" onmouseup="clickRemoteButton(event,'REPLAY', false)" alt="" style="width:14.6%;left:42.7%;top:18.9%;position:absolute"/>
 
     <img id="ssetup" src='<c:url value="/images/remotes/xr11/keys/Setup.png" />' alt="" style="width:8.2%;left:21.1%;top:86.7%;position:absolute"/>
@@ -92,13 +92,5 @@ The mini remote image
 
     <img id="svol" src='<c:url value="/images/remotes/xr11/keys/Volume TEXT.png" />' style="width:20.4%;left:14.4%;top:16.5%;position:absolute;" />
     <img id="sch" src='<c:url value="/images/remotes/xr11/keys/Channel TEXT.png" />' style="width:20.4%;left:65.2%;top:16.5%;position:absolute;" />
+
 </html>
-
-
-(128-77)/417
-77/417
-253/1502
-
-(333-299)/417
-299/417
-

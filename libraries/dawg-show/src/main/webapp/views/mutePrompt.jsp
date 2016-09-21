@@ -16,7 +16,7 @@
 
 --%>
 <!--
-Prompt for giving different options concerning power to an stb
+Prompt for giving different options concerning mute to an stb
 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -24,15 +24,13 @@ Prompt for giving different options concerning power to an stb
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <div style="background-color:#5a5d5f; text-align:right">
-        <img src='<c:url value="/images/close.png" />' style="width: 30px; height: 30px" alt="" onclick="dismissPrompt()"/>
+        <img src='<c:url value="/images/close.png" />' style="width: 30px; height: 30px" alt="" onclick="dismissMutePrompt()"/>
     </div>
     <div style="background-color:#5a5d5f; border-bottom:2px solid black;padding-bottom:5px">
         <font size="5px" color="#dedbdb"><b>What do you want to do?</b></font>
     </div>
     <div style="padding:30px;background-color:#dedbdb">
-        <input style='font-size:17px; display: <%= (Boolean) request.getAttribute("isXR11") ? "block;" : "none;" %>' type="button" value="Send Power Key" onclick="sendPowerKey()" />
-        <input style="font-size:17px" type="button" value="Reboot" onclick="reboot()"/>
-        <input style="font-size:17px" type="button" value="Power Off" onclick="powerOff()"/>
-        <input style="font-size:17px" type="button" value="Power On" onclick="powerOn()"/>
+        <input style="font-size:17px" type="button" value="Send MUTE Key" onclick="sendMuteCommand()" />
+        <input style="font-size:17px" type="button" value="Mute Sound Stream" onclick="muteAudio()"/>
     </div>
 </html>
